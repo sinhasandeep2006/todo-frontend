@@ -10,14 +10,14 @@ function App() {
 
   // Fetch all todos from backend
   useEffect(() => {
-    fetch('http://localhost:5000/api/todos')
+    fetch('https://todo-backend-1-jmzw.onrender.com/api/todos')
       .then((res) => res.json())
       .then((data) => setTodos(data))
       .catch((err) => console.error('Failed to fetch todos:', err));
   }, []);
 
   const addTodo = (todo) => {
-    fetch('http://localhost:5000/api/todos', {
+    fetch('https://todo-backend-1-jmzw.onrender.com/api/todos', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(todo),
